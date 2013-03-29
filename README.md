@@ -24,6 +24,11 @@ Now that you're here, why not start contributing as well? :)
 
 ## Change Log
 
+**master**
+
+- in-layout preview for jekyll
+
+
 **0.4.0** -  *July 30 2012*
 
 - Submit patches with suggestions for repositories you don't have write access to.
