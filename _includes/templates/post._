@@ -136,7 +136,7 @@ Use 4 spaces indentation:
     function identity(x) {
       return x;
     }
-</pre> otra cosa
+</pre>
 </div>
 
         </div>
@@ -149,7 +149,7 @@ Use 4 spaces indentation:
         </div>
       </div>
 
-      <div class="content-preview-wrapper"> otra nueva cosa diferente :D
+      <div class="content-preview-wrapper">
         <div class="content-preview"><div class='post-content'>
           <%= markdown ? marked(content) : '' %>
         </div></div>
