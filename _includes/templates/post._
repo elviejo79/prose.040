@@ -143,7 +143,8 @@ Use 4 spaces indentation:
       </div>
 
       <div class="content-wrapper"> 
-        <div class="content"> escribe algo aqui :P
+      <div style="float:left; width:100px;"> escribe algo aqui :P </div>
+        <div class="content"> 
           <div id="code"></div>
         </div>
       </div>
