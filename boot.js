@@ -26,7 +26,7 @@
 {% include vendor/codemirror/ruby.js %}
 {% include vendor/codemirror/yaml.js %}
 {% include vendor/jquery.cookie.js %}
-
+{% include upload_imgur.js %}
 
 window.app = {
     config: {},
