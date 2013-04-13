@@ -147,10 +147,8 @@ Use 4 spaces indentation:
         <div id="upload_imgur">+
         </div>
         <input style="visibility: collapse; width: 0px;" type="file" onchange="upload(this.files[0])">
-        <div class="uploading">
+        <div id="message">
           <p>Uploading... for 3</p>
-        </div>
-        <div class="uploaded">
           <a id="link">It's online!!!</a>
         </div>
       </div>
