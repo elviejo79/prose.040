@@ -7,7 +7,7 @@ function upload(file) {
     if (!file || !file.type.match(/image.*/)) return;
 
     /* It is! */
-    document.querySelector("#messages").className = "uploading";
+    /*document.body.className = "uploading";*/
 
     /* Lets build a FormData object*/
     var fd = new FormData(); // I wrote about it: https://hack111019e1b70421e1d217666cf1f8dac6b9dc2c87s.mozilla.org/2011/01/how-to-develop-a-html5-image-uploader/
@@ -27,7 +27,7 @@ function upload(file) {
         
         
         
-        document.querySelector("#messages").className = "uploaded";
+        /*document.body.className = "uploaded";*/
     }
     // Ok, I don't handle the errors. An exercice for the reader.
     xhr.setRequestHeader('Authorization', 'Client-ID eac34bd7408ece5');
