@@ -147,7 +147,7 @@ Use 4 spaces indentation:
         <div>+
         </div>
         <input style="visibility: collapse; width: 0px;" type="file" onchange="upload(this.files[0])">
-        <p>Uploading...</p>
+        <p>Uploading... for r</p>
         <a id="link">It's online!!!</a>
       </div>
 
