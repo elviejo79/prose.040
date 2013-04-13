@@ -1,6 +1,7 @@
 ---
 ---
+{% include styles/upload.css %}
 {% include styles/reset.css %}
 {% include styles/style.css %}
 {% include styles/codemirror.css %}
-{% include styles/upload.css %}
+
