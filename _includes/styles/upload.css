@@ -1,7 +1,7 @@
 #upload_imgur  { border:2px dashed; text-align: center; line-height: 100px;  width: 150px; margin: auto; font-size: 40px; display: inline-block;}
-#link  {display: none}
-.uploading div {display: none}
-.uploaded div {display: none}
-.uploading p {display: inline}
-.uploaded #link {display: inline}
+/* #link  {display: none} */
+.show_hide {
+    display:none;
+}
+
 
