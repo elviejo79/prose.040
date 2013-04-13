@@ -5,6 +5,8 @@ permalink: none
 baseurl: ""
 oauth_client_id: c6a7e24e5602af20d7b0
 gatekeeper_url: http://ec2-54-235-20-128.compute-1.amazonaws.com:8080
+prose:
+  rooturl: "_posts"
 exclude:
 - .gitignore
 - README.md
