@@ -143,14 +143,6 @@ Use 4 spaces indentation:
       </div>
 
       <div class="content-wrapper"> 
-      <div style="float:left; width:150px;"> 
-        <div id="upload_imgur">+
-        </div>
-        <input style="visibility: collapse; width: 0px;" type="file" onchange="upload(this.files[0])">
-        <span id="link">[link](http://url.com)</span>
-        </div>
-      </div>
-
         <div class="content"> 
           <div id="code"></div>
         </div>
