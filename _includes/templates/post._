@@ -144,7 +144,14 @@ Use 4 spaces indentation:
 
       <div class="content-wrapper"> 
         <div class="content"> 
-          solo un texto
+
+          <div style="float:left; width:175px;"> 
+            <div id="upload_imgur">+
+            </div>
+            <input style="visibility: collapse; width: 0px;" type="file" onchange="upload(this.files[0])">
+            <span id="link">[link](http://url.com)</span>
+          </div>
+
           <div id="code"></div>
         </div>
       </div>
