@@ -23,7 +23,7 @@ function upload(file) {
         
         var link = JSON.parse(xhr.responseText).data.link;
         document.querySelector("#link").href = link;
-        document.querySelector("#link").innerHTML = "![Alt text]("+ link +")";
+        document.querySelector("#link").innerHTML = "![Alt text]("+ link.replace(".jpg","m.jpg") +")";
         
         
         
