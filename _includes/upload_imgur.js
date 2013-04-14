@@ -22,9 +22,9 @@ function upload(file) {
         
         
         var link = JSON.parse(xhr.responseText).data.link;
-        document.querySelector("#link").href = link;
-        document.querySelector("#link").innerHTML = "![Alt text]("+ link.replace(".jpg","m.jpg") +")";
-        
+        /*document.querySelector("#link").href = link;*/
+        /*document.querySelector("#link").innerHTML = "![Alt text]("+ link.replace(".jpg","m.jpg") +")";*/
+        document.querySelector("#link").value = "![Alt text]("+ link.replace(".jpg","m.jpg") +")";
         
         
         /*document.body.className = "uploaded";*/
