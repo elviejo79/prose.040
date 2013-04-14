@@ -15,7 +15,6 @@ function upload(file) {
     var xhr = new XMLHttpRequest(); // Create the XHR (Cross-Domain XHR FTW!!!) Thank you sooooo much imgur.com
     //xhr.setRequestHeader('Authorization:','Client-ID eac34bd7408ece5');
     xhr.open("POST", "https://api.imgur.com/3/image.json"); // Boooom!
-    //xhr.setRequestHeader('Authorization:','Client-ID eac34bd7408ece5');
     xhr.onload = function() {
         // Big win!
         
@@ -24,7 +23,8 @@ function upload(file) {
         var link = JSON.parse(xhr.responseText).data.link;
         /*document.querySelector("#link").href = link;*/
         /*document.querySelector("#link").innerHTML = "![Alt text]("+ link.replace(".jpg","m.jpg") +")";*/
-        document.querySelector("#link").Value = "![Alt text]("+ link.replace(".jpg","m.jpg") +")";
+      document.getElementById('link').Value = "![Alt text]("+ link.replace(".jpg","m.jpg") +")";
+
         
         
         /*document.body.className = "uploaded";*/
