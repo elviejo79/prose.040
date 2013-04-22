@@ -374,7 +374,7 @@ function movePost(user, repo, branch, path, newPath, cb) {
 // Prepare new empty post
 
 function emptyPost(user, repo, branch, path, cb) {
-  var rawMetadata = "layout:posts \n title: Título de la nota \n twitt: Resumen de menos de 140 caracteres \n author: Redacción \n categories: Sección \n authorlink: http://twtter.com/tu_cuenta \n published:false \n";
+  var rawMetadata = "layout:posts \ntitle: Título de la nota \ntwitt: Resumen de menos de 140 caracteres \nauthor: Redacción \ncategories: Sección \nauthorlink: http://twtter.com/tu_cuenta \npublished:false \n";
   var metadata = {
     "layout": "posts",
     "title": "Título de la nota ",
