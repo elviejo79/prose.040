@@ -374,10 +374,16 @@ function movePost(user, repo, branch, path, newPath, cb) {
 // Prepare new empty post
 
 function emptyPost(user, repo, branch, path, cb) {
-  var rawMetadata = "layout: default\npublished: false";
+  var rawMetadata = "layout:posts \n title: Título de la nota \n twitt: Resumen de menos de 140 caracteres \n author: Redacción \n categories: Sección \n authorlink: http://twtter.com/tu_cuenta \n published:false \n";
   var metadata = {
-    "layout": "default",
-    "published": false,
+    "layout": "posts",
+    "title": "Título de la nota ",
+    "twitt": "Resumen de menos de 140 caracteres",
+    "author": "Redacción",
+    "categories": "Sección",
+    "authorlink": "http://twtter.com/tu_cuenta",
+    "published": "false"
+
   };
 
   var cfg = app.state.config
