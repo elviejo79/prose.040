@@ -22,6 +22,8 @@ function upload(file) {
 	  if (xhr.readyState == 4) {
 		 if(xhr.status == 200){
 		   console.log('200');
+		   var link = xhr.responseText;
+		   console.log(link);
 	   }
 	  else if(xhr.status == 400) {
 			alert('There was an error processing the token.')
@@ -38,7 +40,8 @@ function upload(file) {
         
         console.log('load');
         
-        var link = JSON.parse(xhr.responseText).data.link;
+        var link = xhr.responseText;
+		console.log('link 2'.link);
 		
 		console.log('despues JSON');
 		
