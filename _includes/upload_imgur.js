@@ -39,7 +39,13 @@ function upload(file) {
         console.log('load');
         
         var link = JSON.parse(xhr.responseText).data.link;
+		
+		console.log('despues JSON');
+		
         var link_m = link.replace(/(\.[a-zA-Z]{3})$/g,"m$1")
+		
+		console.log('despues link_m');
+		
         /*document.querySelector("#link").href = link;*/
         /*document.querySelector("#link").innerHTML = "![Alt text]("+ link.replace(".jpg","m.jpg") +")";*/
         document.getElementById('link').value = "![Alt text]("+link_m  +")";
