@@ -22,7 +22,7 @@ function upload(file) {
 	  if (xhr.readyState == 4) {
 		 if(xhr.status == 200){
 		   console.log('200 xml');
-		   var link = xhr.responseXML;
+		   var link = xhr.responseText;
 		   console.log(link);
 	   }
 	  else if(xhr.status == 400) {
@@ -40,8 +40,8 @@ function upload(file) {
         
         console.log('load');
         
-        var link = xhr.responseText;
-		console.log('link 2'.link);
+        var link2 = xhr.responseText;
+		console.log('link 2'.link2);
 		
 		console.log('despues JSON');
 		
