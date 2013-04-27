@@ -24,7 +24,7 @@ function upload(file) {
 	  console.log('Aquí');
 	  if (this.readyState == 4 && this.status == 200) {
 		var binStr = this.responseText;
-		console.log(binStr);
+		console.log('binStr: '.binStr);
 	  }
 	};
 
