@@ -17,9 +17,11 @@ function upload(file) {
     //xhr.open("POST", "https://api.imgur.com/3/image.json"); // Boooom!
 	
 	// OAuth 2.0
-	xhr.open("POST", "https://api.imgur.com/oauth2/authorize?client_id=0b56840db439c71&response_type=token");
+	xhr.open("POST", "https://api.imgur.com/oauth2/secret");
 	
-	
+	console.log('open');
+	xhr.setRequestHeader('Authorization', 'Client-ID eac34bd7408ece5');
+	console.log('header');
 	/*xhr.onreadystatechange = function(e) {
 	  console.log('Aquí');
 	  if (xhr.readyState == 4 && xhr.status == 200) {
@@ -31,7 +33,7 @@ function upload(file) {
     xhr.onload = function() {
         // Big win!
         
-        
+        console.log('onload');
         
         var link = JSON.parse(xhr.responseText).data.link;
 		console.log(link);
@@ -44,9 +46,9 @@ function upload(file) {
         
         /*document.body.className = "uploaded";*/
     }
-	
+	console.log(' finish onload');
     // Ok, I don't handle the errors. An exercice for the reader.
-    //xhr.setRequestHeader('Authorization', 'Client-ID eac34bd7408ece5');
+    
 	
 	//xhr.setRequestHeader('Authorization', 'Bearer', accessToken);
 	
