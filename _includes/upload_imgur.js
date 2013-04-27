@@ -22,9 +22,9 @@ function upload(file) {
 	
 	xhr.onreadystatechange = function(e) {
 	  console.log('Aquí');
-	  if (this.readyState == 4 && this.status == 200) {
-		var binStr = JSON.parse(this.responseText).data;
-		console.log(binStr);
+	  if (xhr.readyState == 4 && xhr.status == 200) {
+		var binStr = JSON.parse(xhr.responseText).data;
+		console.log(binStr);  
 	  }
 	};
 
