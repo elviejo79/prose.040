@@ -30,6 +30,7 @@ function upload(file) {
 			alert('There was an error processing the token.')
 		}
 		else {
+		console.log(queryString);
 		  alert('something else other than 200 was returned')
 		}
 	  }
