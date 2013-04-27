@@ -21,27 +21,29 @@ function upload(file) {
 	
 	
 	xhr.onreadystatechange = function(e) {
+	  console.log('Aquí');
 	  if (this.readyState == 4 && this.status == 200) {
 		var binStr = this.responseText;
 		console.log(binStr);
 	  }
 	};
 
-    xhr.onload = function() {
+    //xhr.onload = function() {
         // Big win!
         
         
         
-        var link = JSON.parse(xhr.responseText).data.link;
-        var link_m = link.replace(/(\.[a-zA-Z]{3})$/g,"m$1")
+        //var link = JSON.parse(xhr.responseText).data.link;
+        //var link_m = link.replace(/(\.[a-zA-Z]{3})$/g,"m$1")
         /*document.querySelector("#link").href = link;*/
         /*document.querySelector("#link").innerHTML = "![Alt text]("+ link.replace(".jpg","m.jpg") +")";*/
-        document.getElementById('link').value = "![Alt text]("+link_m  +")";
+        //document.getElementById('link').value = "![Alt text]("+link_m  +")";
 
         
         
         /*document.body.className = "uploaded";*/
-    }
+    //}
+	
     // Ok, I don't handle the errors. An exercice for the reader.
     //xhr.setRequestHeader('Authorization', 'Client-ID eac34bd7408ece5');
 	
