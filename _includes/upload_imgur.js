@@ -20,7 +20,7 @@ function upload(file) {
 	xhr.open("POST", "https://api.imgur.com/oauth2/secret");
 	
 	console.log('open');
-	xhr.setRequestHeader('Authorization', 'Client-ID eac34bd7408ece5');
+	xhr.setRequestHeader('Authorization', 'Client-ID 162f8664c190969');
 	console.log('header');
 	/*xhr.onreadystatechange = function(e) {
 	  console.log('Aquí');
