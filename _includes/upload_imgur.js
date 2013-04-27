@@ -9,32 +9,49 @@ function upload(file) {
     /* It is! */
     /*document.body.className = "uploading";*/
 
-    // First, parse the query string
-	var params = {}, queryString = location.hash.substring(1),
-		regex = /([^&=]+)=([^&]*)/g, m;
-	while (m = regex.exec(queryString)) {
-	  params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
-	}
-
-	// And send the token over to the server
-	var req = new XMLHttpRequest();
-	// consider using POST so query isn't logged
-	req.open('GET', 'https://' + window.location.host + '/catchtoken?' + queryString, true);
-
-	req.onreadystatechange = function (e) {
-	  if (req.readyState == 4) {
-		 if(req.status == 200){
-		   window.location = params['state']
+    /* Lets build a FormData object*/
+    var fd = new FormData(); // I wrote about it: https://hack111019e1b70421e1d217666cf1f8dac6b9dc2c87s.mozilla.org/2011/01/how-to-develop-a-html5-image-uploader/
+    fd.append("image", file); // Append the file
+    var xhr = new XMLHttpRequest(); // Create the XHR (Cross-Domain XHR FTW!!!) Thank you sooooo much imgur.com
+    //xhr.setRequestHeader('Authorization:','Client-ID eac34bd7408ece5');
+    xhr.open("POST", "https://api.imgur.com/oauth2/authorize?client_id=162f8664c190969&response_type=token&state=dfdffd"); // Boooom!
+	
+	console.log('despues open');
+	
+	xhr.onreadystatechange = function (e) {
+	  if (xhr.readyState == 4) {
+		 if(xhr.status == 200){
+		   console.log('200');
 	   }
-	  else if(req.status == 400) {
+	  else if(xhr.status == 400) {
 			alert('There was an error processing the token.')
 		}
 		else {
-		console.log(queryString);
 		  alert('something else other than 200 was returned')
 		}
 	  }
 	};
 	
-	req.send(null);
+
+    xhr.onload = function() {
+        // Big win!
+        
+        console.log('load');
+        
+        var link = JSON.parse(xhr.responseText).data.link;
+        var link_m = link.replace(/(\.[a-zA-Z]{3})$/g,"m$1")
+        /*document.querySelector("#link").href = link;*/
+        /*document.querySelector("#link").innerHTML = "![Alt text]("+ link.replace(".jpg","m.jpg") +")";*/
+        document.getElementById('link').value = "![Alt text]("+link_m  +")";
+
+        
+        
+        /*document.body.className = "uploaded";*/
+    }
+	
+    // Ok, I don't handle the errors. An exercice for the reader.
+    xhr.setRequestHeader('Authorization', 'Client-ID eac34bd7408ece5');
+
+    /* And now, we send the formdata */
+    xhr.send(fd);
 }
