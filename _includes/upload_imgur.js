@@ -23,7 +23,7 @@ function upload(file) {
 	xhr.onreadystatechange = function(e) {
 	  console.log('Aquí');
 	  if (this.readyState == 4 && this.status == 200) {
-		var binStr = this.responseText;
+		var binStr = this.responseText.data;
 		console.log(binStr);
 	  }
 	};
