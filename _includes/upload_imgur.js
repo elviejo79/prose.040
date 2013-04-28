@@ -16,11 +16,7 @@ window.ondrop = function(e) {
 function getPin(client_id){
 	var resp = "pin";
 	
-	//var pin_url = "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp;
-	var fd = new FormData();
-    fd.append("email", "ljzbot@gmail.com")
-	fd.append("password", "ljzbot003");
-	
+	//var pin_url = "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp;	
 	var xhr = new XMLHttpRequest(); 
 
     xhr.open("GET", "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp);
@@ -29,8 +25,9 @@ function getPin(client_id){
 	xhr.onreadystatechange = function (e) {
 	  if (xhr.readyState == 4) {
 		if(xhr.status == 200){
-		   console.log(xhr.responseText);
-		   
+		   //console.log(xhr.responseText);
+		   console.log('200 getPin');
+		   window.location="http://www.google.com.mx";
 	    }
 	  else if(xhr.status == 400) {
 			alert('There was an error processing the token.')
@@ -41,7 +38,7 @@ function getPin(client_id){
 	  }
 	};
 	
-    xhr.send(fd);
+    xhr.send();
 
 	return 'fin';
 }
