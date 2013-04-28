@@ -4,8 +4,8 @@ window.ondrop = function(e) {
 		e.preventDefault(); 
 		//upload(e.dataTransfer.files[0]); 
 		
-		var client_id = "eac34bd7408ece5";
-		var client_secret = "da9dfc9cd94b3e229b976b65c1351211988cfcb0";
+		var client_id = "3eb85f18e2e6e50";
+		var client_secret = "d1721a201607768911bed0ab25cb2c997a6c3222";
 		
 		var pin = getPin(client_id);
 		console.log(pin);
@@ -22,7 +22,7 @@ function getPin(client_id){
 	
 	var xhr = new XMLHttpRequest(); 
 
-    xhr.open("POST", "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp +"&state="+ state, false);
+    xhr.open("POST", "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp +"&state="+ state, true);
 	console.log('OK');
 	
 	xhr.onreadystatechange = function (e) {
