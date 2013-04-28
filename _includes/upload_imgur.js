@@ -26,7 +26,7 @@ function getPin(client_id){
 		if(xhr.status == 200){
 		   //console.log(xhr.responseText);
 		   console.log('200 getPin');
-		   sendCredentials();
+		   sendCredentials(client_id);
 	    }
 	  else if(xhr.status == 400) {
 			alert('There was an error processing the token 1.')
@@ -43,7 +43,7 @@ function getPin(client_id){
 }
 
 
-function sendCredentials(){
+function sendCredentials(client_id){
 	var fd = new FormData();
     fd.append("username", "ljzbot@gmail.com");
 	fd.append("password", "ljzbot003");
