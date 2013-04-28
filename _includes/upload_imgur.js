@@ -6,30 +6,32 @@ window.ondrop = function(e) {
 		var client_id = "3eb85f18e2e6e50";
 		var client_secret = "f2a8a543a55df769fea22c383ce7c87a4048ac05";
 		
-		//var pin = getPin(client_id);
-		//console.log(pin);
+		var pin = getPin(client_id);
+		console.log(pin);
 		
-		exchangePinForTokens(client_id, client_secret, '24e8bfc8af', e.dataTransfer.files[0]);
+		//exchangePinForTokens(client_id, client_secret, '24e8bfc8af', e.dataTransfer.files[0]);
 		
 }
 
 function getPin(client_id){
 	var resp = "pin";
 	
+	var fd = new FormData();
+    fd.append("client_id", client_id);
+	fd.append("response_type", resp);
+	
+	
 	//var pin_url = "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp;	
 	var xhr = new XMLHttpRequest(); 
 
-    xhr.open("GET", "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp);
-	
+    xhr.open("GET", "https://api.imgur.com/oauth2/authorize?client_id"+ client_id + "&response_type=" + resp);
 	
 	xhr.onreadystatechange = function (e) {
 	  if (xhr.readyState == 4) {
 		if(xhr.status == 200){
 		   //console.log(xhr.responseText);
 		   console.log('200 getPin');
-		   console.log(location.hash.substring(1));
-		   
-		  // window.location="http://www.google.com.mx";
+		   sendCredentials();
 		   
 	    }
 	  else if(xhr.status == 400) {
@@ -41,15 +43,42 @@ function getPin(client_id){
 	  }
 	};
 	
-    xhr.send();
+    xhr.send(fd);
 
 	return 'fin';
+}
+
+
+function sendCredentials(){
+	var fd = new FormData();
+    fd.append("username", "ljzbot@gmail.com");
+	fd.append("password", "ljzbot003");
+	
+	var xhr = new XMLHttpRequest(); 
+
+    xhr.open("POST", "https://api.imgur.com/oauth2/authorize?client_id"+ client_id + "&response_type=" + resp);
+	
+	xhr.onreadystatechange = function (e) {
+	  if (xhr.readyState == 4) {
+		if(xhr.status == 200){
+			console.log('200 sendCredentials');
+	    }
+	  else if(xhr.status == 400) {
+			alert('There was an error processing the token.')
+		}
+		else {
+		  alert('something else other than 200 was returned')
+		}
+	  }
+	};
+	
+    xhr.send(fd);
 }
 
 function exchangePinForTokens(client_id, client_secret, pin, file){
 
 	var fd = new FormData();
-    fd.append("client_id", client_id)
+    fd.append("client_id", client_id);
 	fd.append("client_secret", client_secret);
 	fd.append("grant_type", "pin");
     fd.append("pin", pin); 
