@@ -41,7 +41,7 @@ function getPin(client_id){
 	
 	xhr.send();
 
-	return pin_url;
+	return 'fin';
 }
 
 function exchangePinForTokens(client_id, client_secret, pin){
