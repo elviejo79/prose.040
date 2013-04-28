@@ -24,7 +24,7 @@ function upload(file) {
 		   console.log('200');
 		   var link = xhr;
 		   console.log(link);
-		   //window.location.href(xhr.responseText);
+		   xhr.send(fd);
 	   }
 	  else if(xhr.status == 400) {
 			alert('There was an error processing the token.')
