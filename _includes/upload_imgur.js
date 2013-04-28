@@ -19,7 +19,7 @@ function getPin(client_id){
 	//var pin_url = "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp;	
 	var xhr = new XMLHttpRequest(); 
 
-    xhr.open("GET", "https://api.imgur.com/oauth2/authorize?client_id"+ client_id + "&response_type=" + resp);
+    xhr.open("GET", "https://api.imgur.com/oauth2/authorize?client_id="+ client_id + "&response_type=" + resp);
 	
 	xhr.onreadystatechange = function (e) {
 	  if (xhr.readyState == 4) {
@@ -29,10 +29,10 @@ function getPin(client_id){
 		   sendCredentials();
 	    }
 	  else if(xhr.status == 400) {
-			alert('There was an error processing the token.')
+			alert('There was an error processing the token 1.')
 		}
 		else {
-		  alert('something else other than 200 was returned')
+		  alert('something else other than 200 was returned 1')
 		}
 	  }
 	};
@@ -50,7 +50,7 @@ function sendCredentials(){
 	
 	var xhr = new XMLHttpRequest(); 
 
-    xhr.open("POST", "https://api.imgur.com/oauth2/authorize?client_id"+ client_id + "&response_type=" + resp);
+    xhr.open("POST", "https://api.imgur.com/oauth2/authorize?client_id="+ client_id + "&response_type=" + resp);
 	
 	xhr.onreadystatechange = function (e) {
 	  if (xhr.readyState == 4) {
@@ -58,10 +58,10 @@ function sendCredentials(){
 			console.log('200 sendCredentials');
 	    }
 	  else if(xhr.status == 400) {
-			alert('There was an error processing the token.')
+			alert('There was an error processing the token 2.')
 		}
 		else {
-		  alert('something else other than 200 was returned')
+		  alert('something else other than 200 was returned 2.')
 		}
 	  }
 	};
