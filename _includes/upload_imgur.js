@@ -10,7 +10,7 @@ window.ondrop = function(e) {
 		var pin = getPin(client_id);
 		console.log(pin);
 		
-		exchangePinForTokens(client_id, client_secret, pin);
+		//exchangePinForTokens(client_id, client_secret, pin);
 		
 }
 
