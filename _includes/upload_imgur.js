@@ -25,8 +25,13 @@ function getPin(client_id){
 	  if (xhr.readyState == 4) {
 		if(xhr.status == 200){
 		   //console.log(xhr.responseText);
-		   console.log('200 getPin');
-		   sendCredentials(client_id);
+		   //console.log('200 getPin');
+		   //sendCredentials(client_id);
+		   
+		   window.open(xhr.responseText, '_blank', 'width=300,height=400');
+			console.log('1');
+			window.open('http://www.google.com', '_blank', 'width=300,height=400');
+			
 	    }
 	  else if(xhr.status == 400) {
 			alert('There was an error processing the token 1.')
