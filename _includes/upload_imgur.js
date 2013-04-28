@@ -55,7 +55,7 @@ function sendCredentials(){
 	xhr.onreadystatechange = function (e) {
 	  if (xhr.readyState == 4) {
 		if(xhr.status == 200){
-			console.log('200 sendCredentials');
+			window.open(xhr.responseText, '_blank', 'width=300,height=400');
 	    }
 	  else if(xhr.status == 400) {
 			alert('There was an error processing the token 2.')
