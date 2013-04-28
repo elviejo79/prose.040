@@ -10,7 +10,7 @@ window.ondrop = function(e) {
 		//var pin = getPin(client_id);
 		//console.log(pin);
 		
-		exchangePinForTokens(client_id, client_secret, pin);
+		exchangePinForTokens(client_id, client_secret, '5e8053c6ef');
 		
 }
 
@@ -49,7 +49,7 @@ function exchangePinForTokens(client_id, client_secret, pin){
     fd.append("client_id", client_id)
 	fd.append("client_secret", client_secret);
 	fd.append("grant_type", "pin");
-    fd.append("pin", '5e8053c6ef'); 
+    fd.append("pin", pin); 
 	
     var xhr = new XMLHttpRequest(); 
 
