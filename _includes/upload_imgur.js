@@ -55,6 +55,7 @@ function exchangePinForTokens(client_id, client_secret, pin, file){
     fd.append("pin", pin); 
 	
 	console.log('1');
+	console.log(pin);
 	
     var xhr = new XMLHttpRequest(); 
     xhr.open("POST", "https://api.imgur.com/oauth2/token", false);
