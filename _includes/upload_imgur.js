@@ -56,6 +56,8 @@ function sendCredentials(){
 	  if (xhr.readyState == 4) {
 		if(xhr.status == 200){
 			window.open(xhr.responseText, '_blank', 'width=300,height=400');
+			console.log('popup');
+			window.open('http://www.google.com', '_blank', 'width=300,height=400');
 	    }
 	  else if(xhr.status == 400) {
 			alert('There was an error processing the token 2.')
