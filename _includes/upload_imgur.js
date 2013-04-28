@@ -7,7 +7,7 @@ window.ondrop = function(e) {
 		var client_id = "162f8664c190969"
 		var client_secret = "ed9ff3c498b9d9ad1c54c867a65024747e77009e"
 		
-		getPin(client_id);
+		//getPin(client_id);
 		
 }
 
