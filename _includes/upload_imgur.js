@@ -14,42 +14,16 @@ function upload(file) {
     fd.append("image", file); // Append the file
     var xhr = new XMLHttpRequest(); // Create the XHR (Cross-Domain XHR FTW!!!) Thank you sooooo much imgur.com
     //xhr.setRequestHeader('Authorization:','Client-ID eac34bd7408ece5');
-    xhr.open("POST", "https://api.imgur.com/oauth2/authorize?client_id=5bd2102038b4c62&response_type=token"); // Boooom!
-	
-	console.log('despues open');
-	
-	xhr.onreadystatechange = function (e) {
-	  if (xhr.readyState == 4) {
-		 if(xhr.status == 200){
-		   console.log('200');
-		   var link = xhr;
-		   console.log(link);
-		   xhr.send(fd);
-	   }
-	  else if(xhr.status == 400) {
-			alert('There was an error processing the token.')
-		}
-		else {
-		  alert('something else other than 200 was returned')
-		}
-	  }
-	};
+    xhr.open("POST", "http://api.imgur.com/3/gallery/album/prueba"); // Boooom!
 	
 
     xhr.onload = function() {
         // Big win!
         
-        console.log('load');
         
-        var link2 = xhr.responseText;
-		console.log('link 2'.link2);
-		
-		console.log('despues JSON');
-		
+        
+        var link = JSON.parse(xhr.responseText).data.link;
         var link_m = link.replace(/(\.[a-zA-Z]{3})$/g,"m$1")
-		
-		console.log('despues link_m');
-		
         /*document.querySelector("#link").href = link;*/
         /*document.querySelector("#link").innerHTML = "![Alt text]("+ link.replace(".jpg","m.jpg") +")";*/
         document.getElementById('link').value = "![Alt text]("+link_m  +")";
