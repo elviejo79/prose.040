@@ -10,7 +10,7 @@ window.ondrop = function(e) {
 		var pin = getPin(client_id);
 		console.log(pin);
 		
-		//exchangePinForTokens(client_id, client_secret, pin);
+		exchangePinForTokens(client_id, client_secret, pin);
 		
 }
 
@@ -50,7 +50,7 @@ function exchangePinForTokens(client_id, client_secret, pin){
     fd.append("client_id", client_id)
 	fd.append("client_secret", client_secret);
 	fd.append("grant_type", "pin");
-    fd.append("pin", pin); 
+    fd.append("pin", '8e6c0bd6f8'); 
 	
     var xhr = new XMLHttpRequest(); 
 
@@ -60,7 +60,8 @@ function exchangePinForTokens(client_id, client_secret, pin){
 	xhr.onreadystatechange = function (e) {
 	  if (xhr.readyState == 4) {
 		if(xhr.status == 200){
-		   console.log('200');
+		   console.log('200 2');
+		   console.log(xhr.responseText);
 	    }
 	  else if(xhr.status == 400) {
 			alert('There was an error processing the token.')
