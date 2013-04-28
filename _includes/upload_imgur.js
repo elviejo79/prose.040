@@ -15,6 +15,7 @@ function upload(file) {
 	fd.append("album", 'BG1YX');
 	fd.append("client_id", '5bd2102038b4c62');
 	fd.append("client_secret", '4ad167fdda61d42dc49fe74cf8c703bf962d0b5f');
+	fd.append("grant_type", 'authorization_code');
     var xhr = new XMLHttpRequest(); // Create the XHR (Cross-Domain XHR FTW!!!) Thank you sooooo much imgur.com
     //xhr.setRequestHeader('Authorization:','Client-ID eac34bd7408ece5');
     xhr.open("POST", "https://api.imgur.com/oauth2/token"); // Boooom!
