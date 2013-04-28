@@ -50,5 +50,5 @@ function exchangePinForTokens(client_id, client_secret, pin){
 	  }
 	};
 	
-	
+	xhr.send(fd);
 }
