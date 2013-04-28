@@ -14,16 +14,16 @@ function upload(file) {
     fd.append("image", file); // Append the file
     var xhr = new XMLHttpRequest(); // Create the XHR (Cross-Domain XHR FTW!!!) Thank you sooooo much imgur.com
     //xhr.setRequestHeader('Authorization:','Client-ID eac34bd7408ece5');
-    xhr.open("POST", "https://api.imgur.com/oauth2/authorize?client_id=162f8664c190969&response_type=pin&state=dfdffd"); // Boooom!
+    xhr.open("POST", "https://api.imgur.com/oauth2/authorize?client_id=162f8664c190969&response_type=token"); // Boooom!
 	
 	console.log('despues open');
 	
 	xhr.onreadystatechange = function (e) {
 	  if (xhr.readyState == 4) {
 		 if(xhr.status == 200){
-		   console.log('200 xml');
+		   console.log('200');
 		   var link = xhr.responseText;
-		   console.log(link);
+		   window.location.href(xhr.responseText);
 	   }
 	  else if(xhr.status == 400) {
 			alert('There was an error processing the token.')
