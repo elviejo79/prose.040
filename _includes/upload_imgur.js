@@ -16,11 +16,6 @@ window.ondrop = function(e) {
 function getPin(client_id){
 	var resp = "pin";
 	
-	var fd = new FormData();
-    fd.append("client_id", client_id);
-	fd.append("response_type", resp);
-	
-	
 	//var pin_url = "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp;	
 	var xhr = new XMLHttpRequest(); 
 
@@ -32,7 +27,6 @@ function getPin(client_id){
 		   //console.log(xhr.responseText);
 		   console.log('200 getPin');
 		   sendCredentials();
-		   
 	    }
 	  else if(xhr.status == 400) {
 			alert('There was an error processing the token.')
@@ -43,7 +37,7 @@ function getPin(client_id){
 	  }
 	};
 	
-    xhr.send(fd);
+    xhr.send();
 
 	return 'fin';
 }
