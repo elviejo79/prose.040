@@ -28,9 +28,9 @@ function getPin(client_id){
 		   //console.log('200 getPin');
 		   //sendCredentials(client_id);
 		   
-		   window.open(xhr.responseText, '_blank', 'width=300,height=400');
+		   window.open("https://api.imgur.com/oauth2/authorize?client_id="+ client_id + "&response_type=" + resp, '_blank', 'width=300,height=400');
 			console.log('1');
-			window.open('http://www.google.com', '_blank', 'width=300,height=400');
+			//window.open('http://www.google.com', '_blank', 'width=300,height=400');
 			
 	    }
 	  else if(xhr.status == 400) {
