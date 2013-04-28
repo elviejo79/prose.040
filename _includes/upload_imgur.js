@@ -17,7 +17,7 @@ function getPin(client_id){
 	var resp = "pin";
 	
 	var pin_url = "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp;	
-	`/*var xhr = new XMLHttpRequest(); 
+	/*var xhr = new XMLHttpRequest(); 
 
     xhr.open("GET", "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp);
 	
