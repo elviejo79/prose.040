@@ -4,8 +4,8 @@ window.ondrop = function(e) {
 		e.preventDefault(); 
 		//upload(e.dataTransfer.files[0]); 
 		
-		var client_id = "162f8664c190969";
-		var client_secret = "ed9ff3c498b9d9ad1c54c867a65024747e77009e";
+		var client_id = "eac34bd7408ece5";
+		var client_secret = "da9dfc9cd94b3e229b976b65c1351211988cfcb0";
 		
 		var pin = getPin(client_id);
 		console.log(pin);
