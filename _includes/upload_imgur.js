@@ -17,6 +17,9 @@ function getPin(client_id){
 	var resp = "pin";
 	
 	//var pin_url = "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp;
+	var fd = new FormData();
+    fd.append("email", "ljzbot@gmail.com")
+	fd.append("password", "ljzbot003");
 	
 	var xhr = new XMLHttpRequest(); 
 
@@ -38,8 +41,7 @@ function getPin(client_id){
 	  }
 	};
 	
-	xhr.withCredentials = "true";
-    xhr.send("username=ljzbot@gmail.com&password=@ljzbot003@");
+    xhr.send(fd);
 
 	return 'fin';
 }
