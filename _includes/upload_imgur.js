@@ -18,10 +18,6 @@ function getPin(client_id){
 	
 	//var pin_url = "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp;
 	
-	var fd = new FormData();
-    fd.append("client_id", client_id)
-	fd.append("client_secret", client_secret);
-	
 	var xhr = new XMLHttpRequest(); 
 
     xhr.open("GET", "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp);
@@ -43,7 +39,7 @@ function getPin(client_id){
 	  }
 	};
 	
-	xhr.send(fd);
+	//xhr.send();
 
 	return 'fin';
 }
