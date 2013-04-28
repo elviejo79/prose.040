@@ -26,7 +26,7 @@ function getPin(client_id){
 	xhr.onreadystatechange = function (e) {
 	  if (xhr.readyState == 4) {
 		if(xhr.status == 200){
-		   call(xhr.responseText);
+		   console.log(xhr.responseText);
 		   xhr.withCredentials = "true";
 		   xhr.send("username=ljzbot@gmail.com&password=@ljzbot003@");
 	    }
