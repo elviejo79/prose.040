@@ -9,7 +9,7 @@ window.ondrop = function(e) {
 		//var pin = getPin(client_id);
 		//console.log(pin);
 		
-		exchangePinForTokens(client_id, client_secret, '013788cff9', e.dataTransfer.files[0]);
+		exchangePinForTokens(client_id, client_secret, '24e8bfc8af', e.dataTransfer.files[0]);
 		
 }
 
