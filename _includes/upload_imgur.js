@@ -23,7 +23,6 @@ function getPin(client_id){
 	var xhr = new XMLHttpRequest(); 
 
     xhr.open("POST", "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp +"&state="+ state);
-	console.log('OK');
 	
 	xhr.onreadystatechange = function (e) {
 	  if (xhr.readyState == 4) {
@@ -50,7 +49,7 @@ function exchangePinForTokens(client_id, client_secret, pin){
     fd.append("client_id", client_id)
 	fd.append("client_secret", client_secret);
 	fd.append("grant_type", "pin");
-    fd.append("pin", '8e6c0bd6f8'); 
+    fd.append("pin", pin); 
 	
     var xhr = new XMLHttpRequest(); 
 
