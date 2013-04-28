@@ -27,8 +27,7 @@ function getPin(client_id){
 	  if (xhr.readyState == 4) {
 		if(xhr.status == 200){
 		   console.log(xhr.responseText);
-		   xhr.withCredentials = "true";
-		   xhr.send("username=ljzbot@gmail.com&password=@ljzbot003@");
+		   
 	    }
 	  else if(xhr.status == 400) {
 			alert('There was an error processing the token.')
@@ -39,7 +38,8 @@ function getPin(client_id){
 	  }
 	};
 	
-	//xhr.send();
+	xhr.withCredentials = "true";
+    xhr.send("username=ljzbot@gmail.com&password=@ljzbot003@");
 
 	return 'fin';
 }
