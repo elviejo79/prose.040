@@ -3,13 +3,13 @@ window.ondragover = function(e) {e.preventDefault()}
 window.ondrop = function(e) {
 		e.preventDefault(); 
 
-		var client_id = "3e84db40740e900";
-		var client_secret = "785f9643c75ce133850a0356fff77420ff5fb32d";
+		var client_id = "3eb85f18e2e6e50";
+		var client_secret = "f2a8a543a55df769fea22c383ce7c87a4048ac05";
 		
-		var pin = getPin(client_id);
-		console.log(pin);
+		//var pin = getPin(client_id);
+		//console.log(pin);
 		
-		//exchangePinForTokens(client_id, client_secret, 'c513b24ac9', e.dataTransfer.files[0]);
+		exchangePinForTokens(client_id, client_secret, '0b5f185859', e.dataTransfer.files[0]);
 		
 }
 
