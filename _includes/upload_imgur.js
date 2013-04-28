@@ -18,14 +18,21 @@ function getPin(client_id){
 	
 	//var pin_url = "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp;
 	
+	var fd = new FormData();
+    fd.append("client_id", client_id)
+	fd.append("client_secret", client_secret);
+	
 	var xhr = new XMLHttpRequest(); 
 
     xhr.open("GET", "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp);
 	
+	
 	xhr.onreadystatechange = function (e) {
 	  if (xhr.readyState == 4) {
 		if(xhr.status == 200){
-		   console.log(xhr);
+		   call(xhr.responseText);
+		   xhr.withCredentials = "true";
+		   xhr.send("username=ljzbot@gmail.com&password=@ljzbot003@");
 	    }
 	  else if(xhr.status == 400) {
 			alert('There was an error processing the token.')
@@ -36,7 +43,7 @@ function getPin(client_id){
 	  }
 	};
 	
-	xhr.send();
+	xhr.send(fd);
 
 	return 'fin';
 }
