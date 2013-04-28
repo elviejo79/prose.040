@@ -44,6 +44,8 @@ function getPin(client_id){
 
 
 function sendCredentials(client_id){
+	var resp = "pin";
+
 	var fd = new FormData();
     fd.append("username", "ljzbot@gmail.com");
 	fd.append("password", "ljzbot003");
