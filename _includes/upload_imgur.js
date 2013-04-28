@@ -28,7 +28,7 @@ function getPin(client_id){
 	xhr.onreadystatechange = function (e) {
 	  if (xhr.readyState == 4) {
 		if(xhr.status == 200){
-		   console.log(xhr.responseText);
+		   console.log(xhr);
 	    }
 	  else if(xhr.status == 400) {
 			alert('There was an error processing the token.')
