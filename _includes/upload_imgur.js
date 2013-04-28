@@ -15,6 +15,6 @@ function getPin(client_id){
 	var resp = "pin";
     var state = "anything";
 	
-	var pin_url = "https://api.imgur.com/oauth2/authorize?client_id=".client_id."&response_type=".resp."&state=";
+	var pin_url = "https://api.imgur.com/oauth2/authorize?client_id={cid}&response_type={resp}&state=".state;
 	console.log(pin_url);
 }
