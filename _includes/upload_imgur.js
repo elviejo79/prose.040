@@ -9,15 +9,15 @@ window.ondrop = function(e) {
 		var pin = getPin(client_id);
 		console.log(pin);
 		
-		//exchangePinForTokens(client_id, client_secret, '0b5f185859', e.dataTransfer.files[0]);
+		exchangePinForTokens(client_id, client_secret, pin, e.dataTransfer.files[0]);
 		
 }
 
 function getPin(client_id){
 	var resp = "pin";
 	
-	//var pin_url = "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp;	
-	var xhr = new XMLHttpRequest(); 
+	var pin_url = "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp;	
+	`/*var xhr = new XMLHttpRequest(); 
 
     xhr.open("GET", "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp);
 	
@@ -41,21 +41,25 @@ function getPin(client_id){
 	  }
 	};
 	
-    xhr.send();
+    xhr.send();*/
 
-	return 'fin';
+	return pin_url;
 }
 
 function exchangePinForTokens(client_id, client_secret, pin, file){
-
+	console.log('exchangePinForTokens');
 	var fd = new FormData();
     fd.append("client_id", client_id)
 	fd.append("client_secret", client_secret);
 	fd.append("grant_type", "pin");
     fd.append("pin", pin); 
 	
+	console.log('1');
+	
     var xhr = new XMLHttpRequest(); 
     xhr.open("POST", "https://api.imgur.com/oauth2/token", false);
+	
+	console.log('2');
 	
 	xhr.onreadystatechange = function (e) {
 	  if (xhr.readyState == 4) {
