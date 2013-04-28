@@ -21,8 +21,8 @@ function upload(file) {
 	xhr.onreadystatechange = function (e) {
 	  if (xhr.readyState == 4) {
 		 if(xhr.status == 200){
-		   console.log('200 xml');
-		   var link = xhr.responseText;
+		   console.log('200');
+		   var link = xhr;
 		   console.log(link);
 		   //window.location.href(xhr.responseText);
 	   }
