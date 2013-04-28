@@ -2,15 +2,14 @@
 window.ondragover = function(e) {e.preventDefault()}
 window.ondrop = function(e) {
 		e.preventDefault(); 
-		//upload(e.dataTransfer.files[0]); 
-		
+
 		var client_id = "05bb67a8cbc5cee";
 		var client_secret = "2327841166a94b0b90d275d4b1841e814a81d93d";
 		
 		//var pin = getPin(client_id);
 		//console.log(pin);
 		
-		exchangePinForTokens(client_id, client_secret, 'e284be2d62');
+		exchangePinForTokens(client_id, client_secret, 'c513b24ac9', e.dataTransfer.files[0]);
 		
 }
 
@@ -43,7 +42,7 @@ function getPin(client_id){
 	return 'fin';
 }
 
-function exchangePinForTokens(client_id, client_secret, pin){
+function exchangePinForTokens(client_id, client_secret, pin, file){
 
 	var fd = new FormData();
     fd.append("client_id", client_id)
@@ -52,26 +51,61 @@ function exchangePinForTokens(client_id, client_secret, pin){
     fd.append("pin", pin); 
 	
     var xhr = new XMLHttpRequest(); 
-
     xhr.open("POST", "https://api.imgur.com/oauth2/token", false);
 	
-	console.log('POST 2');
 	xhr.onreadystatechange = function (e) {
 	  if (xhr.readyState == 4) {
 		if(xhr.status == 200){
-		   console.log('200');
-		   console.log(xhr.responseText);
 		   var access_token = JSON.parse(xhr.responseText).access_token;
-		   console.log('token =' + access_token);
+		   var refresh_token = JSON.parse(xhr.responseText).refresh_token
+		   
+		   upload(file, access_token);
 	    }
-	  else if(xhr.status == 400) {
-			alert('There was an error processing the token.')
+	    /*else if(xhr.status == 400) {
+			console.log('There was an error processing the token.')
 		}
 		else {
-		  alert('something else other than 200 was returned')
-		}
+		  console.log('something else other than 200 was returned')
+		}*/
 	  }
 	};
 	
 	xhr.send(fd);
+}
+
+function upload(file, access_token) {
+
+    /* Is the file an image? */
+    if (!file || !file.type.match(/image.*/)) return;
+
+    /* It is! */
+    /*document.body.className = "uploading";*/
+
+    /* Lets build a FormData object*/
+    var fd = new FormData(); // I wrote about it: https://hack111019e1b70421e1d217666cf1f8dac6b9dc2c87s.mozilla.org/2011/01/how-to-develop-a-html5-image-uploader/
+    fd.append("image", file); // Append the file
+	fd.append("album", 'SiqhC');
+	
+    var xhr = new XMLHttpRequest(); // Create the XHR (Cross-Domain XHR FTW!!!) Thank you sooooo much imgur.com
+    //xhr.setRequestHeader('Authorization:','Client-ID eac34bd7408ece5');
+    xhr.open("POST", "https://api.imgur.com/3/image.json"); // Boooom!
+	
+
+    xhr.onload = function() {
+        // Big win!
+        
+        var link = JSON.parse(xhr.responseText).data.link;
+        var link_m = link.replace(/(\.[a-zA-Z]{3})$/g,"m$1")
+        /*document.querySelector("#link").href = link;*/
+        /*document.querySelector("#link").innerHTML = "![Alt text]("+ link.replace(".jpg","m.jpg") +")";*/
+        document.getElementById('link').value = "![Alt text]("+link_m  +")";
+
+        /*document.body.className = "uploaded";*/
+    }
+	
+    // Ok, I don't handle the errors. An exercice for the reader.
+    xhr.setRequestHeader('Authorization', 'Bearer '+ access_token);
+
+    /* And now, we send the formdata */
+    xhr.send(fd);
 }
