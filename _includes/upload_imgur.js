@@ -4,8 +4,8 @@ window.ondrop = function(e) {
 		e.preventDefault(); 
 		//upload(e.dataTransfer.files[0]); 
 		
-		client_id= r"client_id_from_addclient"
-		client_secret= r"client_secret_from_addclient"
+		var client_id = "162f8664c190969"
+		var client_secret = "ed9ff3c498b9d9ad1c54c867a65024747e77009e"
 		
 		getPin(client_id);
 		
