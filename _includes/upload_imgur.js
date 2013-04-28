@@ -61,6 +61,8 @@ function exchangePinForTokens(client_id, client_secret, pin){
 		if(xhr.status == 200){
 		   console.log('200');
 		   console.log(xhr.responseText);
+		   var access_token = JSON.parse(xhr.responseText).data.access_token;
+		   console.log('token =' + access_token);
 	    }
 	  else if(xhr.status == 400) {
 			alert('There was an error processing the token.')
