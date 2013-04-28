@@ -10,7 +10,7 @@ window.ondrop = function(e) {
 		var pin = getPin(client_id);
 		console.log(pin);
 		
-		exchangePinForTokens(client_id, client_secret, pin);
+		//exchangePinForTokens(client_id, client_secret, pin);
 		
 }
 
@@ -18,7 +18,28 @@ function getPin(client_id){
 	var resp = "pin";
     var state = "anything";
 	
-	var pin_url = "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp +"&state="+ state;
+	//var pin_url = "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp +"&state="+ state;
+	
+	var xhr = new XMLHttpRequest(); 
+
+    xhr.open("POST", "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp +"&state="+ state, false);
+	console.log('OK');
+	
+	xhr.onreadystatechange = function (e) {
+	  if (xhr.readyState == 4) {
+		if(xhr.status == 200){
+		   console.log('200');
+	    }
+	  else if(xhr.status == 400) {
+			alert('There was an error processing the token.')
+		}
+		else {
+		  alert('something else other than 200 was returned')
+		}
+	  }
+	};
+	
+	xhr.send();
 
 	return pin_url;
 }
