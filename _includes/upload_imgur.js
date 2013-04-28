@@ -14,7 +14,7 @@ function upload(file) {
     fd.append("image", file); // Append the file
     var xhr = new XMLHttpRequest(); // Create the XHR (Cross-Domain XHR FTW!!!) Thank you sooooo much imgur.com
     //xhr.setRequestHeader('Authorization:','Client-ID eac34bd7408ece5');
-    xhr.open("POST", "https://api.imgur.com/3/BG1YX/image.json/"); // Boooom!
+    xhr.open("GET", "https://api.imgur.com/3/image.json?album=BG1YX"); // Boooom!
 	
 	console.log('antes onload');
     xhr.onload = function() {
