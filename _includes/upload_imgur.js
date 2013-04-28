@@ -31,7 +31,7 @@ function upload(file) {
         /*document.body.className = "uploaded";*/
     }
     // Ok, I don't handle the errors. An exercice for the reader.
-    xhr.setRequestHeader('Authorization', 'Client-ID eac34bd7408ece5');
+    xhr.setRequestHeader('Authorization', 'Client-ID 6ecb7c5a9abea6d');
     /* And now, we send the formdata */
     xhr.send(fd);
 }
