@@ -6,10 +6,10 @@ window.ondrop = function(e) {
 		var client_id = "3eb85f18e2e6e50";
 		var client_secret = "f2a8a543a55df769fea22c383ce7c87a4048ac05";
 		
-		//var pin = getPin(client_id);
-		//console.log(pin);
+		var pin = getPin(client_id);
+		console.log(pin);
 		
-		exchangePinForTokens(client_id, client_secret, '0b5f185859', e.dataTransfer.files[0]);
+		//exchangePinForTokens(client_id, client_secret, '0b5f185859', e.dataTransfer.files[0]);
 		
 }
 
@@ -27,7 +27,10 @@ function getPin(client_id){
 		if(xhr.status == 200){
 		   //console.log(xhr.responseText);
 		   console.log('200 getPin');
-		   window.location="http://www.google.com.mx";
+		   console.log(location.hash.substring(1));
+		   
+		  // window.location="http://www.google.com.mx";
+		   
 	    }
 	  else if(xhr.status == 400) {
 			alert('There was an error processing the token.')
