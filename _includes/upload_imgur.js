@@ -16,13 +16,16 @@ function upload(file) {
     //xhr.setRequestHeader('Authorization:','Client-ID eac34bd7408ece5');
     xhr.open("POST", "https://ljzac.imgur.com/3/prueba/image.json/add"); // Boooom!
 	
-
+	console.log('antes onload');
     xhr.onload = function() {
         // Big win!
         
-        
+        console.log('onload');
         
         var link = JSON.parse(xhr.responseText).data.link;
+		
+		console.log('antes link_m');
+		
         var link_m = link.replace(/(\.[a-zA-Z]{3})$/g,"m$1")
         /*document.querySelector("#link").href = link;*/
         /*document.querySelector("#link").innerHTML = "![Alt text]("+ link.replace(".jpg","m.jpg") +")";*/
@@ -32,6 +35,8 @@ function upload(file) {
         
         /*document.body.className = "uploaded";*/
     }
+	
+	console.log('despues onload');
 	
     // Ok, I don't handle the errors. An exercice for the reader.
     xhr.setRequestHeader('Authorization', 'Client-ID eac34bd7408ece5');
