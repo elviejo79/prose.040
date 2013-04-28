@@ -6,22 +6,21 @@ window.ondrop = function(e) {
 		var client_id = "05bb67a8cbc5cee";
 		var client_secret = "2327841166a94b0b90d275d4b1841e814a81d93d";
 		
-		//var pin = getPin(client_id);
-		//console.log(pin);
+		var pin = getPin(client_id);
+		console.log(pin);
 		
-		exchangePinForTokens(client_id, client_secret, 'c513b24ac9', e.dataTransfer.files[0]);
+		//exchangePinForTokens(client_id, client_secret, 'c513b24ac9', e.dataTransfer.files[0]);
 		
 }
 
 function getPin(client_id){
 	var resp = "pin";
-    var state = "anything";
 	
-	//var pin_url = "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp +"&state="+ state;
+	//var pin_url = "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp;
 	
 	var xhr = new XMLHttpRequest(); 
 
-    xhr.open("POST", "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp +"&state="+ state);
+    xhr.open("GET", "https://api.imgur.com/oauth2/authorize?client_id="+ client_id +"&response_type="+ resp);
 	
 	xhr.onreadystatechange = function (e) {
 	  if (xhr.readyState == 4) {
