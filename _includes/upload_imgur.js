@@ -3,8 +3,8 @@ window.ondragover = function(e) {e.preventDefault()}
 window.ondrop = function(e) {
 		e.preventDefault(); 
 
-		var client_id = "05bb67a8cbc5cee";
-		var client_secret = "2327841166a94b0b90d275d4b1841e814a81d93d";
+		var client_id = "3e84db40740e900";
+		var client_secret = "785f9643c75ce133850a0356fff77420ff5fb32d";
 		
 		var pin = getPin(client_id);
 		console.log(pin);
