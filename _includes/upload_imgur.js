@@ -35,14 +35,20 @@ function exchangePinForTokens(client_id, client_secret, pin){
 
     xhr.open("POST", "https://api.imgur.com/oauth2/token/");
 	
-	
-	xhr.onreadystatechange=function()
-    {
-	  if (xhr.readyState==4 && xhr.status==200)
-		{
-		 console.log(xhr.responseText);
+	console.log('1');
+	req.onreadystatechange = function (e) {
+	  if (req.readyState == 4) {
+		if(req.status == 200){
+		   console.log('200');
+	    }
+	  else if(req.status == 400) {
+			alert('There was an error processing the token.')
 		}
-	}
+		else {
+		  alert('something else other than 200 was returned')
+		}
+	  }
+	};
 	
 	
 }
