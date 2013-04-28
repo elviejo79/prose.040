@@ -33,9 +33,9 @@ function exchangePinForTokens(client_id, client_secret, pin){
 	
     var xhr = new XMLHttpRequest(); 
 
-    xhr.open("POST", "https://api.imgur.com/oauth2/token", true);
+    xhr.open("POST", "https://api.imgur.com/oauth2/token", false);
 	
-	console.log('POST');
+	console.log('POST 2');
 	xhr.onreadystatechange = function (e) {
 	  if (xhr.readyState == 4) {
 		if(xhr.status == 200){
