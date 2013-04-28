@@ -10,7 +10,7 @@ window.ondrop = function(e) {
 		//var pin = getPin(client_id);
 		//console.log(pin);
 		
-		exchangePinForTokens(client_id, client_secret, '99a6d072b5');
+		exchangePinForTokens(client_id, client_secret, 'cee29e82e3');
 		
 }
 
@@ -61,7 +61,7 @@ function exchangePinForTokens(client_id, client_secret, pin){
 		if(xhr.status == 200){
 		   console.log('200');
 		   console.log(xhr.responseText);
-		   var access_token = xhr.responseText.access_token;
+		   var access_token = xhr.responseText['refresh_token'];
 		   console.log('token =' + access_token);
 	    }
 	  else if(xhr.status == 400) {
