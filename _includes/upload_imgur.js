@@ -28,7 +28,7 @@ function getPin(client_id){
 	xhr.onreadystatechange = function (e) {
 	  if (xhr.readyState == 4) {
 		if(xhr.status == 200){
-		   console.log(xhr);
+		   //console.log(xhr);
 	    }
 	  else if(xhr.status == 400) {
 			alert('There was an error processing the token.')
@@ -54,16 +54,13 @@ function exchangePinForTokens(client_id, client_secret, pin){
 	
     var xhr = new XMLHttpRequest(); 
 
-    xhr.open("POST", "https://api.imgur.com/oauth2/token");
+    xhr.open("POST", "https://api.imgur.com/oauth2/token", false);
 	
 	console.log('POST 2');
 	xhr.onreadystatechange = function (e) {
 	  if (xhr.readyState == 4) {
 		if(xhr.status == 200){
-		   console.log('200 2');
 		   console.log(xhr.responseText);
-		   var token = JSON.parse(xhr.responseText).data.access_token;
-		   console.log (token);
 	    }
 	  else if(xhr.status == 400) {
 			alert('There was an error processing the token.')
