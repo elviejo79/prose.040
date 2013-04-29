@@ -13,8 +13,9 @@ function upload(file) {
     var fd = new FormData(); // I wrote about it: https://hack111019e1b70421e1d217666cf1f8dac6b9dc2c87s.mozilla.org/2011/01/how-to-develop-a-html5-image-uploader/
     fd.append("image", file); // Append the file
     var xhr = new XMLHttpRequest(); // Create the XHR (Cross-Domain XHR FTW!!!) Thank you sooooo much imgur.com
+
+    xhr.open("POST", "https://api.imgur.com/3/upload", true); // Boooom!
     xhr.setRequestHeader('Authorization','Bearer 227624a26fea45db608ba5aac9bae61297ca2b61');
-    xhr.open("POST", "https://api.imgur.com/3/upload", false); // Boooom!
     xhr.onload = function() {
         // Big win!
         var link = JSON.parse(xhr.responseText).data.link;
