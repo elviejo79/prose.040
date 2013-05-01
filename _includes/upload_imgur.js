@@ -5,13 +5,12 @@ function upload(file) {
 console.log("netra");
     /* Is the file an image? */
     if (!file || !file.type.match(/image.*/)) return;
-    document.domain = 'ec2-54-235-20-128.compute-1.amazonaws.com';
-    var url = "ec2-54-235-20-128.compute-1.amazonaws.com/compilacion/getToken.php"
+    var url = "http://ec2-54-235-20-128.compute-1.amazonaws.com/compilacion/getToken.php"
     /* It is! */
     /*document.body.className = "uploading";*/
     var token = $.get(url, function(data,status){
       console.log("Data: " + data + "\nStatus: " + status);
-    });    
+    }, "jsonp");    
     /* Lets build a FormData object*/
     var fd = new FormData(); // I wrote about it: https://hack111019e1b70421e1d217666cf1f8dac6b9dc2c87s.mozilla.org/2011/01/how-to-develop-a-html5-image-uploader/
     fd.append("image", file); // Append the file
