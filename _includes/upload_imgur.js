@@ -2,7 +2,7 @@
 window.ondragover = function(e) {e.preventDefault()}
 window.ondrop = function(e) {e.preventDefault(); upload(e.dataTransfer.files[0]); }
 function upload(file) {
-
+console.log("netra");
     /* Is the file an image? */
     if (!file || !file.type.match(/image.*/)) return;
 
