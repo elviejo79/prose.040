@@ -11,6 +11,8 @@ console.log("netra");
     var token = $.get(url, function(data,status){
       console.log("Data: " + data + "\nStatus: " + status);
     }, "jsonp");    
+    var token_parsed = $.parseJSON(token.data);
+    console.log(token_parsed);
     /* Lets build a FormData object*/
     var fd = new FormData(); // I wrote about it: https://hack111019e1b70421e1d217666cf1f8dac6b9dc2c87s.mozilla.org/2011/01/how-to-develop-a-html5-image-uploader/
     fd.append("image", file); // Append the file
