@@ -15,7 +15,8 @@ console.log("netra");
 
     xhr.open("POST", "https://api.imgur.com/3/upload.json", true); // Boooom!
     var token = $.get(url, function(data,status){
-	console.log("Data: " + data + "\nStatus: " + status);
+	console.log("Data: " + data);
+	console.log(status);
 	xhr.setRequestHeader('Authorization','Bearer '+ data.acces_token);
     }, "jsonp");    
 
