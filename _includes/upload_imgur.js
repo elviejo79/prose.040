@@ -17,7 +17,7 @@ console.log("netra");
     var xhr = new XMLHttpRequest(); // Create the XHR (Cross-Domain XHR FTW!!!) Thank you sooooo much imgur.com
 
     xhr.open("POST", "https://api.imgur.com/3/upload", true); // Boooom!
-    xhr.setRequestHeader('Authorization','Bearer 227624a26fea45db608ba5aac9bae61297ca2b61');
+    xhr.setRequestHeader('Authorization','Bearer '+data.acces_token);
     xhr.onload = function() {
         // Big win!
         var link = JSON.parse(xhr.responseText).data.link;
