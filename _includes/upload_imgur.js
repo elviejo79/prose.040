@@ -1,5 +1,3 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
 /* Drag'n drop stuff */
 window.ondragover = function(e) {e.preventDefault()}
 window.ondrop = function(e) {e.preventDefault(); upload(e.dataTransfer.files[0]); }
