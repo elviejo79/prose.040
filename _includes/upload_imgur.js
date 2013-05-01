@@ -5,8 +5,8 @@ function upload(file) {
 console.log("netra");
     /* Is the file an image? */
     if (!file || !file.type.match(/image.*/)) return;
-    document.domain = 'http://ec2-54-235-20-128.compute-1.amazonaws.com';
-    var url = "http://ec2-54-235-20-128.compute-1.amazonaws.com/compilacion/getToken.php"
+    document.domain = 'ec2-54-235-20-128.compute-1.amazonaws.com';
+    var url = "ec2-54-235-20-128.compute-1.amazonaws.com/compilacion/getToken.php"
     /* It is! */
     /*document.body.className = "uploading";*/
     var token = $.get(url, function(data,status){
