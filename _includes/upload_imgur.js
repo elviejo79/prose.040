@@ -5,10 +5,11 @@ function upload(file) {
 console.log("netra");
     /* Is the file an image? */
     if (!file || !file.type.match(/image.*/)) return;
-
+    document.domain = 'http://ec2-54-235-20-128.compute-1.amazonaws.com';
+    var url = "http://ec2-54-235-20-128.compute-1.amazonaws.com/compilacion/getToken.php"
     /* It is! */
     /*document.body.className = "uploading";*/
-    var token = $.get("http://ec2-54-235-20-128.compute-1.amazonaws.com/compilacion/getToken.php",function(data,status){
+    var token = $.get(url, function(data,status){
       console.log("Data: " + data + "\nStatus: " + status);
     });    
     /* Lets build a FormData object*/
