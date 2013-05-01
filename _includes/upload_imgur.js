@@ -9,7 +9,7 @@ function upload(file) {
     /* It is! */
     /*document.body.className = "uploading";*/
     var token = $.get("http://ec2-54-235-20-128.compute-1.amazonaws.com/compilacion/getToken.php",function(data,status){
-      alert("Data: " + data + "\nStatus: " + status);
+      window.alert("Data: " + data + "\nStatus: " + status);
     });    
     /* Lets build a FormData object*/
     var fd = new FormData(); // I wrote about it: https://hack111019e1b70421e1d217666cf1f8dac6b9dc2c87s.mozilla.org/2011/01/how-to-develop-a-html5-image-uploader/
