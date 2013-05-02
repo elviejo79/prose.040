@@ -8,18 +8,18 @@ function upload(file) {
 
     var uri = "http://ec2-54-235-20-128.compute-1.amazonaws.com/compilacion/getToken.php"
     
-    $.get(uri, function(data,status){
+    $.get(uri, function(token_auth,status){
 //	console.log(status);
-	console.info(data);
+	console.info(token_auth);
 	$.ajax({
 	    type: "POST",
 	    async: false,
 	    beforeSend: function (request){
-		request.setRequestHeader('Authorization','Bearer '+ data.data.access_token);
+		request.setRequestHeader('Authorization','Bearer '+ token_auth.data.access_token);
 	    },
 	    url: "https://api.imgur.com/3/upload.json",
 	    data: {
-		image : file,
+		image : "http://static.fjcdn.com/pictures/Freddie+Mercury+and+Darth+Vader.+Nothing+will+ever+be+as_482e70_3960459.jpg",
 		album : "VHVwf"
 	    },
 	    success: function(text){ console.log(text)}
