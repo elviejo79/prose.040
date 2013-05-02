@@ -22,7 +22,7 @@ function upload(file) {
 		request.setRequestHeader('Authorization','Bearer '+ token_auth.data.access_token);
 	    },
 	    url: "https://api.imgur.com/3/upload.json",
-	    data: fd.serialize(),
+	    data: fd,
 	    success: function(text){ console.log(text)}
 	});
 
