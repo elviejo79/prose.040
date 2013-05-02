@@ -16,13 +16,14 @@ console.log("netra");
     xhr.open("POST", "https://api.imgur.com/3/upload.json", true); // Boooom!
     var uri = "http://ec2-54-235-20-128.compute-1.amazonaws.com/compilacion/getToken.php"
 
-    $.get(uri, function(data,status){
-	console.log(status);
+    var token = $.get(uri, function(data,status){
+//	console.log(status);
 	console.info(data);
-	console.log(data.data.access_token);
-
-	xhr.setRequestHeader('Authorization','Bearer '+ data.data.access_token);
+//	console.log(data.data.access_token);
+	return data.data.access_token
     });    
+    console.log(token);
+    xhr.setRequestHeader('Authorization','Bearer '+ token);
 
     xhr.onload = function() {
         // Big win!
