@@ -10,11 +10,7 @@ function upload(file) {
     
     $.get(uri, function(token_auth,status){
 	//	console.log(status);
-	var img = document.createElement("img");
-	var reader = new FileReader();  
-	reader.onload = function(e) {img.src = e.target.result}
-	reader.readAsDataURL(file),
-	console.info(reader.readAsDataURL());
+	console.info(reader.result);
 	console.info(token_auth);
 	console.info(file);
 	$.ajax({
@@ -25,7 +21,13 @@ function upload(file) {
 	    },
 	    url: "https://api.imgur.com/3/upload.json",
 	    data: {
-		image : reader.result,
+		image : function(){
+	    	    var img = document.createElement("img");
+		    var reader = new FileReader();  
+		    reader.onload = function(e) {img.src = e.target.result}
+		    reader.readAsDataURL(file);
+		    return reader.result;
+		},
 		type : "base64",
 		album : "VHVwf"
 	    },
