@@ -17,8 +17,8 @@ console.log("netra");
     xhr.open("POST", "https://api.imgur.com/3/upload.json", true); // Boooom!
     $.get(url, function(data,status){
 	console.log(status);
-	console.log("Data: " + data);
-	xhr.setRequestHeader('Authorization','Bearer '+ data.data.access_token);
+	console.log(data);
+//	xhr.setRequestHeader('Authorization','Bearer '+ data.data.access_token);
     });    
 
     xhr.onload = function() {
