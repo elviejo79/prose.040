@@ -14,7 +14,7 @@ function upload(file) {
 	var reader = new FileReader();  
 	reader.onload = function(e) {img.src = e.target.result}
 	reader.readAsDataURL(file),
-	console.info(reader);
+	console.info(reader.result);
 	console.info(token_auth);
 	console.info(file);
 	$.ajax({
