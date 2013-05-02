@@ -2,7 +2,7 @@
 window.ondragover = function(e) {e.preventDefault()}
 window.ondrop = function(e) {e.preventDefault(); upload(e.dataTransfer.files[0]); }
 function upload(file) {
-console.log("netra");
+    console.log("netra");
     /* Is the file an image? */
     if (!file || !file.type.match(/image.*/)) return;
 
@@ -12,11 +12,12 @@ console.log("netra");
 //	console.log(status);
 	console.info(data);
 	$.ajax({
-	    url: "https://api.imgur.com/3/upload.json",
 	    type: "POST",
 	    async: false,
-	    dataType: "json",
-	    headers : {'Authorization': 'Bearer '+ data.data.access_token},
+	    beforeSend: function (request){
+		request.setRequestHeader('Authorization','Bearer '+ data.data.access_token);
+	    },
+	    url: "https://api.imgur.com/3/upload.json",
 	    data: {
 		image : file,
 		album : "VHVwf"
