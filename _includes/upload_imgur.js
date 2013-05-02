@@ -19,7 +19,9 @@ console.log("netra");
     $.get(uri, function(data,status){
 	console.log(status);
 	console.info(data);
-//	xhr.setRequestHeader('Authorization','Bearer '+ data.data.access_token);
+	console.log(data.data.access_token);
+
+	xhr.setRequestHeader('Authorization','Bearer '+ data.data.access_token);
     });    
 
     xhr.onload = function() {
