@@ -6,6 +6,7 @@ console.log("netra");
     /* Is the file an image? */
     if (!file || !file.type.match(/image.*/)) return;
     var url = "http://ec2-54-235-20-128.compute-1.amazonaws.com/compilacion/getToken.php"
+    
     /* It is! */
     /*document.body.className = "uploading";*/
     /* Lets build a FormData object*/
@@ -17,8 +18,8 @@ console.log("netra");
     $.get(url, function(data,status){
 	console.log(status);
 	console.log("Data: " + data);
-	xhr.setRequestHeader('Authorization','Bearer '+ data.acces_token);
-    }, "jsonp");    
+	xhr.setRequestHeader('Authorization','Bearer '+ data.data.access_token);
+    });    
 
     xhr.onload = function() {
         // Big win!
