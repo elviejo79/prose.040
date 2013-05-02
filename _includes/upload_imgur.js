@@ -23,6 +23,8 @@ function upload(file) {
 	    },
 	    url: "https://api.imgur.com/3/upload.json",
 	    data: fd,
+	    processData: false,
+	    contentType: false,
 	    success: function(text){ console.log(text)}
 	});
 
