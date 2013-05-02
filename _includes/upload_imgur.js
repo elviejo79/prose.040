@@ -9,7 +9,12 @@ function upload(file) {
     var uri = "http://ec2-54-235-20-128.compute-1.amazonaws.com/compilacion/getToken.php"
     
     $.get(uri, function(token_auth,status){
-//	console.log(status);
+	//	console.log(status);
+	var img = document.createElement("img");
+	var reader = new FileReader();  
+	reader.onload = function(e) {img.src = e.target.result}
+	reader.readAsDataURL(file),
+	console.info(reader);
 	console.info(token_auth);
 	console.info(file);
 	$.ajax({
@@ -20,7 +25,7 @@ function upload(file) {
 	    },
 	    url: "https://api.imgur.com/3/upload.json",
 	    data: {
-		image : file.getAsDataURL(),
+		image : reader.readAsDataURL(file),
 		type : "base64",
 		album : "VHVwf"
 	    },
