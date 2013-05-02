@@ -19,7 +19,8 @@ function upload(file) {
 	    },
 	    url: "https://api.imgur.com/3/upload.json",
 	    data: {
-		image : "http://static.fjcdn.com/pictures/Freddie+Mercury+and+Darth+Vader.+Nothing+will+ever+be+as_482e70_3960459.jpg",
+		image : file.getAsDataUrl(),
+		type : "base64",
 		album : "VHVwf"
 	    },
 	    success: function(text){ console.log(text)}
