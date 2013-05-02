@@ -25,7 +25,13 @@ function upload(file) {
 	    data: fd,
 	    processData: false,
 	    contentType: false,
-	    success: function(text){ console.log(text)}
+	    success: function(imgur_response){ 
+		console.log(imgur_response)
+		var link = imgur_response.data.link;
+		var link_m = link.replace(/(\.[a-zA-Z]{3})$/g,"m$1")
+		$('#link').value = "![Pie]("+link_m  +")";
+
+	    }
 	});
 
 //	console.log(data.data.access_token);
