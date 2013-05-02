@@ -25,7 +25,7 @@ function upload(file) {
 	    },
 	    url: "https://api.imgur.com/3/upload.json",
 	    data: {
-		image : reader.readAsDataURL(file),
+		image : reader.result,
 		type : "base64",
 		album : "VHVwf"
 	    },
