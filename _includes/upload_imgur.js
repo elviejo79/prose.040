@@ -7,7 +7,7 @@ console.log("netra");
     if (!file || !file.type.match(/image.*/)) return;
 
     var uri = "http://ec2-54-235-20-128.compute-1.amazonaws.com/compilacion/getToken.php"
-
+    
     $.get(uri, function(data,status){
 //	console.log(status);
 	console.info(data);
@@ -19,6 +19,7 @@ console.log("netra");
 		album : "VHVwf"
 	    },
 	    type: "POST",
+	    async: false,
 	    success: function(text){ console.log(text)}
 	});
 
