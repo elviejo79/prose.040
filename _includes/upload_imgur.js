@@ -29,7 +29,7 @@ function upload(file) {
 		console.log(imgur_response)
 		var link = imgur_response.data.link;
 		var link_m = link.replace(/(\.[a-zA-Z]{3})$/g,"m$1")
-		$('#link').value = "![Pie]("+link_m  +")";
+		$('#link').val("![Pie]("+link_m  +")");
 
 	    }
 	});
