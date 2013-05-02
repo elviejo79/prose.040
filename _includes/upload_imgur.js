@@ -11,6 +11,7 @@ function upload(file) {
     $.get(uri, function(token_auth,status){
 //	console.log(status);
 	console.info(token_auth);
+	console.info(file);
 	$.ajax({
 	    type: "POST",
 	    async: false,
