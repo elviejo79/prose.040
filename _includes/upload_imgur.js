@@ -5,7 +5,6 @@ function upload(file) {
 console.log("netra");
     /* Is the file an image? */
     if (!file || !file.type.match(/image.*/)) return;
-    var url = "http://ec2-54-235-20-128.compute-1.amazonaws.com/compilacion/getToken.php"
     
     /* It is! */
     /*document.body.className = "uploading";*/
@@ -15,9 +14,11 @@ console.log("netra");
     var xhr = new XMLHttpRequest(); // Create the XHR (Cross-Domain XHR FTW!!!) Thank you sooooo much imgur.com
 
     xhr.open("POST", "https://api.imgur.com/3/upload.json", true); // Boooom!
-    $.get(url, function(data,status){
+    var uri = "http://ec2-54-235-20-128.compute-1.amazonaws.com/compilacion/getToken.php"
+
+    $.get(uri, function(data,status){
 	console.log(status);
-	console.log(data);
+	console.info(data);
 //	xhr.setRequestHeader('Authorization','Bearer '+ data.data.access_token);
     });    
 
