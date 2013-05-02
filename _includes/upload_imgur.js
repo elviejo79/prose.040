@@ -20,6 +20,7 @@ console.log("netra");
 	    },
 	    type: "POST",
 	    async: false,
+	    dataType: "json",
 	    success: function(text){ console.log(text)}
 	});
 
