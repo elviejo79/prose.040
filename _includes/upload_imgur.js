@@ -13,14 +13,14 @@ console.log("netra");
 	console.info(data);
 	$.ajax({
 	    url: "https://api.imgur.com/3/upload.json",
+	    type: "POST",
+	    async: false,
+	    dataType: "json",
 	    headers : {'Authorization': 'Bearer '+ data.data.access_token},
 	    data: {
 		image : file,
 		album : "VHVwf"
 	    },
-	    type: "POST",
-	    async: false,
-	    dataType: "json",
 	    success: function(text){ console.log(text)}
 	});
 
