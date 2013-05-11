@@ -374,14 +374,14 @@ function movePost(user, repo, branch, path, newPath, cb) {
 // Prepare new empty post
 
 function emptyPost(user, repo, branch, path, cb) {
-  var rawMetadata = "layout: posts \ntitle: Título de la nota \ntwitt: Resumen de menos de 140 caracteres \nauthor: Redacción \ncategories: Sección \nauthorlink: http://twtter.com/tu_cuenta \npublished: false";
+  var rawMetadata = "layout: posts \ntitle: Título de la nota \ntwitt: Resumen de menos de 140 caracteres \nauthor: Redacción \ncategories: [Portada] \nauthorlink: http://twtter.com/tu_cuenta \npublished: false";
   var metadata = {
     "layout": "posts",
     "title": "Título de la nota ",
     "twitt": "Resumen de menos de 140 caracteres",
     "author": "Redacción",
-    "categories": "Sección",
-    "authorlink": "http://twtter.com/tu_cuenta",
+    "categories": "[Portada]",
+    "authorlink": "http://ljz.mx/autores/tu_cuenta",
     "published": "false"
 
   };
